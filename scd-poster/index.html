@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>I'm Attending · AWS Student Community Day Islamabad 2026</title>
   <meta name="description" content="Create your personalized “I'm Attending” poster for AWS Student Community Day Islamabad 2026.">
-  <meta name="theme-color" content="#030b16">
+  <meta name="theme-color" content="#101435">
   <meta property="og:title" content="I'm attending AWS Student Community Day Islamabad 2026">
   <meta property="og:description" content="Create your personalized event poster in seconds.">
   <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
@@ -21,24 +21,45 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto:wght@700&display=swap">
 
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" id="siteHeader">
     <div class="container header-inner">
-      <a class="brand" href="../">AWS Student Community Day</a>
-      <span class="event-tag">Islamabad 2026</span>
+      <a class="logo" href="../">
+        <img src="../images/logo.svg" alt="AWS Student Builder Group NUST" width="220" height="59">
+      </a>
+
+      <nav class="site-nav" aria-label="Main">
+        <ul id="mainmenu">
+          <li><a href="../#section-hero">Home</a></li>
+          <li><a href="../#section-about">About Us</a></li>
+          <li><a href="../#section-why-attend">Benefits</a></li>
+          <li><a href="../#section-schedule">Schedule</a></li>
+          <li><a href="../#section-faq">FAQ</a></li>
+          <li><a class="active" href="./" aria-current="page">SCD Poster</a></li>
+          <li><a href="../#section-contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button type="button" class="menu-btn" id="menuButton" aria-label="Open menu" aria-expanded="false" aria-controls="mainmenu">
+        <span></span>
+      </button>
     </div>
   </header>
 
   <main class="container">
     <section class="intro">
-      <p class="eyebrow">26 November 2026 · RIMMS Seminar Hall, NUST</p>
-      <h1>You're attending. <span>Make it official.</span></h1>
+      <div class="subtitle">AWS Student Community Day · Islamabad 2026</div>
+      <h1>You're attending.<br>Make it official.</h1>
       <p class="lede">Create your personalized event poster and share that you're joining us at AWS Student Community Day Islamabad 2026.</p>
+      <p class="event-meta">
+        <span><span class="dot" aria-hidden="true"></span>Thursday, 26 November 2026</span>
+        <span><span class="dot" aria-hidden="true"></span>RIMMS Seminar Hall, NUST</span>
+      </p>
     </section>
 
     <section class="generator" aria-label="Poster generator">
@@ -95,7 +116,9 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">Organized by AWS Student Builder Group NUST</div>
+    <div class="container">
+      © 2026 AWS Student Builder Group NUST · <a href="../">Back to main site</a>
+    </div>
   </footer>
 </body>
 </html>

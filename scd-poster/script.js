@@ -441,9 +441,36 @@ function setupDragging() {
   });
 }
 
+/* ---------- Mobile menu ---------- */
+
+function setupMenu() {
+  const header = document.getElementById('siteHeader');
+  const button = document.getElementById('menuButton');
+  if (!header || !button) return;
+
+  const setOpen = (open) => {
+    header.classList.toggle('menu-open', open);
+    button.setAttribute('aria-expanded', String(open));
+    button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  };
+
+  button.addEventListener('click', () => setOpen(!header.classList.contains('menu-open')));
+  header.querySelectorAll('#mainmenu a').forEach((link) => {
+    link.addEventListener('click', () => setOpen(false));
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && header.classList.contains('menu-open')) {
+      setOpen(false);
+      button.focus();
+    }
+  });
+}
+
 /* ---------- Init ---------- */
 
 function bindEvents() {
+  setupMenu();
+
   els.uploadButton.addEventListener('click', openFilePicker);
   els.changePhotoButton.addEventListener('click', openFilePicker);
   els.photoInput.addEventListener('change', (e) => handlePhotoUpload(e.target.files[0]));
